@@ -70,7 +70,7 @@ const descricao = document.querySelector("#p_descricao");
            const resp = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${idCard}`)
         
            const data2 = await resp.json(); 
-           console.log(data2)
+           
            
           let result = "";
 
