@@ -127,9 +127,7 @@ span#close:hover{
     background-color: #cccccc10;
 }
 
-img#img_modal{
-    object-fit: cover;
-    object-position: center;
+img#img_modal{   
     width: 60%;  
     border-radius: .5rem 0 0 .5rem;  
     padding: 2.5rem;
