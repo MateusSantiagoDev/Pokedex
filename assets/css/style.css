@@ -71,6 +71,33 @@ img.card:hover{
 
 }
 
+section#section_button{
+display: flex;
+justify-content: center;
+background-color: #3C3E44;
+padding: 2rem
+}
+
+button#button{
+   
+    padding: .1rem 3rem;
+    background-color:#ccc;
+    border-radius: 5rem;
+    color:#3C3E44;   
+    transform: scale(.98);
+    border: solid .2px;
+    
+}
+
+button#button:hover{
+    transform: scale(1.1);
+    cursor: pointer;
+    border: solid .2px green;
+    color: brown;
+    
+
+}
+
 footer {
     width: 100%;
     height: 5rem;
@@ -88,9 +115,9 @@ section#modal{
     z-index: 99999;
     display: none;
     justify-content: center;
-    align-items: center;
-    top: 0;
+    align-items: center;  
     overflow-y: auto;
+    top: 0;
    
 }
 
@@ -130,8 +157,7 @@ span#close:hover{
 img#img_modal{   
     width: 60%;  
     border-radius: .5rem 0 0 .5rem;  
-    padding: .5rem;
-   
+    padding: .5rem; 
     
     
 }
@@ -229,11 +255,6 @@ p#numero1{
 .card_id{
     display: none;
 }
-
-
-   
-
-
 
 div#div_descricao{
     display: flex;   

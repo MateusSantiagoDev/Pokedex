@@ -1,4 +1,4 @@
-let page = 1;
+let page = 0;
 
 
 const modalImg = document.querySelector("#img_modal");
@@ -14,10 +14,9 @@ const descricao = document.querySelector("#p_descricao");
 
 
     async function getPokemons(){
-    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100000&offset=${page}`)
+    const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=${page}`)
 
-    const data = await resposta.json();
-    
+    const data = await resposta.json();      
     
 
 
@@ -37,7 +36,7 @@ const descricao = document.querySelector("#p_descricao");
            <span class="card_id">${data.id}</span>            
         </div>
            
-            `)           
+            `)          
         
     });
 
@@ -48,7 +47,10 @@ const descricao = document.querySelector("#p_descricao");
     cardModal.forEach(function(item){
         item.addEventListener("click", async function(event){
             const element = event.path.filter(element => element.className == "cards")
-            const idCard = element[0].children[1].innerHTML   
+            const idCard = element[0].children[1].innerHTML  
+            
+
+            console.log(idCard)
 
            const resposta = await fetch(`https://pokeapi.co/api/v2/pokemon/${idCard}`)
 
@@ -85,14 +87,9 @@ const descricao = document.querySelector("#p_descricao");
            descricao.innerText = result;
           }   
 
-           })
-
-    
+           })   
 
         })
-
-         
-
           
     }
 
@@ -102,22 +99,19 @@ const descricao = document.querySelector("#p_descricao");
         modal.style.display = "none";
 
      }) 
+
+     const verMais = document.querySelector("#button")
+
+     verMais.addEventListener("click", function(){           
+         
+        
+            page = page + 100;           
+         
+        
+        getPokemons();
+        
+       
+     })
      
-
-  
-      function viewMore(){ 
-     page++
-     getPokemons();
-     }
-
-    window.addEventListener("scroll", function(){ 
-    const {scrollTop, scrollHeight, clientHeight} = this.document.documentElement;
-   
-    if(scrollTop + clientHeight >= scrollHeight -300){
-        viewMore();
-    }
-    })
-    
-
     getPokemons();  
  
